@@ -1,0 +1,90 @@
+/* INICIAR SESION */
+.titulo-inicio{
+    background-color: #233b53; /*Para ver el rango de uso*/
+    justify-content: center;
+    color: rgb(0, 0, 0);
+	flex: content;
+    margin: 20px;
+	padding: 10px;
+}
+
+.subtitulo-inicio{
+    background-color: #233b53; /*Para ver el rango de uso*/
+    justify-content: center;
+	background-size: cover;
+    color: rgb(0, 0, 0);
+	flex: content;
+}
+
+.formulario-sesion {
+	background-color: #233b53; /*Para ver el rango de uso*/
+	color: white;
+	padding: 30px;
+	margin: 20px 550px 20px 550px;
+}
+
+.titulo-sesion {
+    background-color: #233b53; /*Para ver el rango de uso*/
+    justify-content: center;
+    color: rgb(0, 0, 0);
+	flex: content;
+}
+/* BASE */
+.avatar{/*Imagen en circular*/
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.nav-opciones {
+    background-color: #0d2033;
+    color: white;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* GENERAL */
+.general-cards {
+	flex-direction: column;
+	margin-bottom: 10px;
+}
+
+.general-cards .card{
+	flex-direction: row;
+	text-align-last: center;
+	padding: 5px;
+	border-radius: 15px;
+	margin: 10px;
+}
+
+/* PERFIL */
+.formulario-perfil {
+	background-color: #233b53;
+	color: white;
+	padding: 30px;
+	border-radius: 20px;
+	margin: 20px 350px 20px 350px;
+}
+
+/* DEPOSITAR */
+.formulario-pago {
+	flex-direction: column;
+	background-color: #233b53;
+	color: white;
+	padding: 20px;
+	border-radius: 20px;
+	margin: 10px 300px 10px 300px;
+}
+
+.banner-pago {
+	justify-content: center;
+	background-image: url(../img/vector-doble-green-pink.jpg);
+	background-size: cover;
+	color: white;
+	flex: content;
+	border-radius: 50px;
+	margin: 20px 100px 20px 100px;
+	padding: 15px;
+	border: solid 3px #ddff62;
+}
