@@ -64,7 +64,12 @@
 	color: white;
 	padding: 30px;
 	border-radius: 20px;
-	margin: 20px 350px 20px 350px;
+	margin: 20px 250px 20px 250px;
+}
+
+.formulario-perfil form {
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 /* DEPOSITAR */
@@ -74,7 +79,7 @@
 	color: white;
 	padding: 20px;
 	border-radius: 20px;
-	margin: 10px 300px 10px 300px;
+	margin: 10px 250px 10px 250px;
 }
 
 .banner-pago {
