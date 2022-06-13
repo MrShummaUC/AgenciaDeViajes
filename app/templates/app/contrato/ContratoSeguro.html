@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block contenido %}
+    <div class="col-lg-12 col-sm-12 col-12">
+        <div class="formulario-meta d-flex  shadow">
+            <i class="fa-circle-dollar"></i>
+            <form action="post">
+                <div>
+                    <embed src="ContratoPDF.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="180%" height="470">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block contenido %}
+    <div class="formulario-meta d-flex justify-content-center shadow">
+        <i class="fa-circle-dollar"></i>
+        <form action="post">
+            <div>
+                <h1>Porcentaje restante para pagar la meta</h1>
+            </div>
+            <div class=" mt-5 text-center">
+                <h2>Porcentaje Actual</h2>
+                <i class="fa-solid fa-dollar-sign"></i>                         
+            </div>
+            <div class="container">
+                <div class="progress">     
+                    <div class="progress-bar" role="progressbar" style="width:70%">
+                        70%
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

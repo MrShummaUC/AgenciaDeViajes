@@ -1,0 +1,37 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block contenido %}
+    <div class="col-lg-12 col-sm-12 col-12 ">
+        <div class="general-cards d-flex">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fa-solid fa-plane"></i>  &nbsp; "Nombre del Cliente" </h4>
+                    <a href="{% url 'ContratoCliente' %}" class="btn btn-success btn-block mt-4">Contrato del Cliente</a>
+                    <a href="{% url 'ContratoSeguro' %}" class="btn btn-success btn-block mt-4">Contrato del Seguro</a>
+                </div>
+            </div>
+            <div class="card shadow">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fa-solid fa-plane"></i>  &nbsp; "Nombre del Cliente" </h4>
+                    <a href="{% url 'ContratoCliente' %}" class="btn btn-success btn-block mt-4">Contrato del Cliente</a>
+                    <a href="{% url 'ContratoSeguro' %}" class="btn btn-success btn-block mt-4">Contrato del Seguro</a>
+                </div>
+            </div>
+            <div class="card shadow">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fa-solid fa-plane"></i>  &nbsp; "Nombre del Cliente" </h4>
+                    <a href="{% url 'ContratoCliente' %}" class="btn btn-success btn-block mt-4">Contrato del Cliente</a>
+                    <a href="{% url 'ContratoSeguro' %}" class="btn btn-success btn-block mt-4">Contrato del Seguro</a>
+                </div>
+            </div>
+            <div class="card shadow">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fa-solid fa-plane"></i>  &nbsp; "Nombre del Cliente" </h4>
+                    <a href="{% url 'ContratoCliente' %}" class="btn btn-success btn-block mt-4">Contrato del Cliente</a>
+                    <a href="{% url 'ContratoSeguro' %}" class="btn btn-success btn-block mt-4">Contrato del Seguro</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

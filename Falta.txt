@@ -1,0 +1,10 @@
+
+
+Ajustar ruta de imagenes
+
+Error en views Estan Alejadas las que estan mandando ese error 
+
+Y modificar datos fijos: Contrato PDF
+			Publicaciones
+			Seguro
+			Servicios extra

@@ -14,25 +14,50 @@ def base(request):
     return render(request, 'app/base.html')
 @login_required
 def cliente(request):
-    return render(request, 'app/cliente.html')
+    return render(request, 'app/cliente/cliente.html')
 @login_required
 def contrato(request):
-    return render(request, 'app/contrato.html')
+    return render(request, 'app/contrato/contrato.html')
 @login_required
 def deposito(request):
-    return render(request, 'app/deposito.html')
+    return render(request, 'app/posible_eliminacion/deposito.html')
 @login_required
 def estado(request):
-    return render(request, 'app/estado.html')
+    return render(request, 'app/cliente/estado.html')
 @login_required
 def monto(request):
-    return render(request, 'app/monto.html')
+    return render(request, 'app/cliente/monto.html')
 @login_required
 def perfil(request):
-    return render(request, 'app/perfil.html')
+    return render(request, 'app/varios/perfil.html')
 @login_required
 def reporte(request):
-    return render(request, 'app/reporte.html')
+    return render(request, 'app/varios/reporte.html')
+@login_required
+def ContratoCliente(request):
+    return render(request, 'app/contrato/ContratoCliente.html')
+@login_required
+def ContratoSeguro(request):
+    return render(request, 'app/contrato/ContratoSeguro.html')
+@login_required
+def meta(request):
+    return render(request, 'app/cliente/meta.html')
+@login_required
+def Publicaciones(request):
+    return render(request, 'app/varios/Publicaciones.html')
+@login_required
+def seguro(request):
+    return render(request, 'app/varios/seguro.html')
+@login_required
+def ServicioContratado(request):
+    return render(request, 'app/servicios/ServicioContratado.html')
+@login_required
+def ServiciosAdicionales(request):
+    return render(request, 'app/servicios/ServiciosAdicionales.html')
+
+
+
+
 
 # CRUD DE USER
 def registro(request):

@@ -1,0 +1,54 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block contenido %}
+    <div class="formulario-perfil d-flex justify-content-between shadow">
+        <form action="get">
+            <div class="mb-3 mt-3">
+                <i class="fas fa-user"></i>
+                <label for="name" class="form-label">Nombre Completo:</label>
+                    <br>
+                    Javier Insotroza
+            </div>
+            <hr>
+            <div class="mb-3 mt-2">
+                <i class="fas fa-user"></i>
+                <label for="name" class="form-label">Número de Teléfono:</label>
+                    <p>+56 9 35649772</p>
+            </div>
+            <hr>
+            <div class="mb-3 mt-2">
+                <i class="fas fa-user"></i>
+                <label for="name" class="form-label">Dirección:</label>
+                    <p>Avenida Mexico 2045</p>
+            </div>
+            <hr>
+            <div class="mb-5 mt-2">
+                <i class="fas fa-user"></i>
+                <label for="name" class="form-label">Residencia:</label>
+                    <h3>Casa 26</h3>
+            </div>
+        </form>
+        <form action="get ">
+            <div class="mb-3 mt-2 d-flex justify-content-center">
+                <img src="{% static 'app/img/Vanilla Logo.png' %}" alt="ParaisoPeludo" width="150px" class="avatar">
+            </div>
+            <div class="mb-3 mt-2">
+                <div class="d-grid">
+                    <a href="#" class="btn btn-success btn-block">Inicio</a>
+                </div>
+            </div>
+            <div class="mb-3 mt-2">
+                <div class="d-grid">
+                    <a href="#" class="btn btn-warning btn-block">Ofertas</a></li>
+                </div>
+            </div>
+            <div class="mb-3 mt-2">
+                <div class="d-grid">
+                    <a href="#" class="btn btn-danger btn-block">Cerrar Cuenta</a></li>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
