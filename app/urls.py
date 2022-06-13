@@ -19,4 +19,5 @@ urlpatterns = [
     path('seguro/', seguro, name='seguro'),
     path('ServicioContratado/', ServicioContratado, name='ServicioContratado'),
     path('ServiciosAdicionales/', ServiciosAdicionales, name='ServiciosAdicionales'),
+    path('registroViaje/', registroViaje, name='registroViaje'),
 ]
