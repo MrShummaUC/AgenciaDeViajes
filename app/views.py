@@ -42,32 +42,32 @@ def reporte(request):
     return render(request, 'app/varios/reporte.html')
 
 @login_required
-def ContratoCliente(request):
-    return render(request, 'app/contrato/ContratoCliente.html')
+def contratoCliente(request):
+    return render(request, 'app/contrato/contratoCliente.html')
 
 @login_required
-def ContratoSeguro(request):
-    return render(request, 'app/contrato/ContratoSeguro.html')
+def contratoSeguro(request):
+    return render(request, 'app/contrato/contratoSeguro.html')
 
 @login_required
 def meta(request):
     return render(request, 'app/cliente/meta.html')
 
 @login_required
-def Publicaciones(request):
-    return render(request, 'app/varios/Publicaciones.html')
+def publicaciones(request):
+    return render(request, 'app/varios/publicaciones.html')
 
 @login_required
 def seguro(request):
     return render(request, 'app/varios/seguro.html')
 
 @login_required
-def ServicioContratado(request):
-    return render(request, 'app/servicios/ServicioContratado.html')
+def servicioContratado(request):
+    return render(request, 'app/servicios/servicioContratado.html')
 
 @login_required
-def ServiciosAdicionales(request):
-    return render(request, 'app/servicios/ServiciosAdicionales.html')
+def serviciosAdicionales(request):
+    return render(request, 'app/servicios/serviciosAdicionales.html')
 
 @login_required
 def registroViaje(request):
