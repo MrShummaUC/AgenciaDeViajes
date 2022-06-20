@@ -3,26 +3,14 @@
 {% load humanize %}
 {% block navbar %}
     <div class="nav-opciones mb-3">
-        <ul class="nav flex-row justify-content-between color-enlaces">
-            <a class="nav-link" href="#">Registro Viaje</a>
+        <ul class="nav flex-row justify-content-between color-enlaces mx-5">
+            <a class="nav-link mx-5" href="{% url 'listaSeguro' %}">Lista Seguros</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" target="_blank" href="#">Generar Reporte</a>
+                <a class="nav-link mx-5" href="{% url 'agregarSeguro' %}">Agregar Seguro</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'cliente' %}">Clientes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'monto' %}">Generar Reporte</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'contrato' %}">Consultar Contrato</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'seguro' %}">Agregar Seguros</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'publicaciones' %}">Subir </a>
+                <a class="nav-link mx-5" href="{% url 'contrato' %}">Consultar Contrato</a>
             </li>
         </ul>
     </div>
@@ -37,7 +25,7 @@
                         <div class="card-body">
                             <h2>Listado De Seguros</h2>
                             <hr>
-                            <table class="table table-condensed table-hover table-striped table-responsive-sm bg-light border">
+                            <table class="table table-condensed table-hover table-striped table-responsive-sm bg-light border text-center">
                                 <thead>
                                     <tr>
                                         <th>CODIGO</th>
@@ -47,14 +35,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for aux in listaSeguros %}    
+                                    {% for aux in listaSeguro %}    
                                     <tr>
                                         <td scope="row">{{ aux.codigo }}</td>
                                         <td>{{ aux.nombre }}</td>
-                                        <td>{{ aux.marca }}</td>
+                                        <td>{{ aux.descripcion }}</td>
                                         <td>{{ aux.precio }}</td>
                                         <td>
-                                            <a href="{% url 'modificarProducto' aux.codigo %}" class="btn btn-info">Modificar</a>
+                                            <a href="{% url 'modificarSeguro' aux.codigo %}" class="btn btn-info">Modificar</a>
                                             <a onclick="eliminar({{ aux.codigo }})" class="btn btn-danger">Eliminar</a>
                                         </td>
                                     </tr>

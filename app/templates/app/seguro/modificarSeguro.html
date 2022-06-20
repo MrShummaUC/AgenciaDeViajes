@@ -1,0 +1,59 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+{% block navbar %}
+    <div class="nav-opciones mb-3">
+        <ul class="nav flex-row justify-content-between color-enlaces mx-5">
+            <a class="nav-link mx-5" href="{% url 'listaSeguro' %}">Lista Seguros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mx-5" href="{% url 'agregarSeguro' %}">Agregar Seguro</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mx-5" href="{% url 'contrato' %}">Consultar Contrato</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+{% block contenido %}
+    <!--Hay que crearla y por ende falta el Mocup-->
+    <div class="col-12 col-md-6 offset-md-3">
+        <div class="card bg-dark text-light border border-4 rounded-3">
+            <div class="card-body">
+                <!-- Para que tome cualquier archivo -->
+                        
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <div class="card bg-dark text-light" style="border: none;">
+                        <h2>Modificar Seguros</h2>
+                        <hr>
+                        </div>
+                    {% csrf_token %}
+                    <table>
+                        {{ form | crispy }}
+                    </table>
+                    <div class="d-flex justify-content-end">
+                        <input type="reset" value="Cancelar" class="btn btn-danger">
+                        &nbsp;
+                        <input type="submit" value="Guardar" class="btn btn-success">
+                    </div>
+                </form>
+
+                <!--Nuevo sistema para recivir mensajes-->
+                {% if messages %}
+                    {% for msj in messages %}
+                        <script>
+                            Swal.fire({
+                                title: 'Guardado!',
+                                text: '{{ msj }}',
+                                icon: 'success',
+                                showConfirmButton: false,
+                                timer: 2000
+                            });
+                        </script>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

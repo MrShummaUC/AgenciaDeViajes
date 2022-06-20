@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Servicio(models.Model):
+class Seguro(models.Model):
     codigo = models.IntegerField(null=False,primary_key=True)
     nombre = models.CharField(max_length=60)
     descripcion = models.CharField(max_length=200)
@@ -11,4 +11,4 @@ class Servicio(models.Model):
         return self.nombre
 
     class Meta:
-        db_table = 'db_Servicio'
+        db_table = 'db_Seguro'

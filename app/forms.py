@@ -5,10 +5,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 # Creamos un template del formulario
-class ServicioForm (forms.ModelForm):
+class SeguroForm (forms.ModelForm):
 
     class Meta: 
-        model = Servicio
+        model = Seguro
         fields = '__all__'
 
 

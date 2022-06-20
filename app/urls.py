@@ -16,8 +16,12 @@ urlpatterns = [
     path('contratoSeguro/', contratoSeguro, name='contratoSeguro'),
     path('meta/', meta, name='meta'),
     path('publicaciones/', publicaciones, name='publicaciones'),
-    path('seguro/', seguro, name='seguro'),
     path('servicioContratado/', servicioContratado, name='servicioContratado'),
     path('serviciosAdicionales/', serviciosAdicionales, name='serviciosAdicionales'),
     path('registroViaje/', registroViaje, name='registroViaje'),
+    path('seguro/', seguro, name='seguro'),
+    path('listarSeguro/', listarSeguro, name='listaSeguro'),
+    path('agregarSeguro/', agregarSeguro, name='agregarSeguro'),
+    path('modificarSeguro/<codigo>', modificarSeguro, name='modificarSeguro'),
+    path('eliminarSeguro/<codigo>', eliminarSeguro, name='eliminarSeguro'),
 ]

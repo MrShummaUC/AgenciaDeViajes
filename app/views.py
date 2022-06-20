@@ -57,9 +57,52 @@ def meta(request):
 def publicaciones(request):
     return render(request, 'app/varios/publicaciones.html')
 
-@login_required
+# SEGURO
 def seguro(request):
-    return render(request, 'app/varios/seguro.html')
+    return render(request, 'app/seguro/seguro.html')
+
+def agregarSeguro(request):
+    datos = {
+        'form' : SeguroForm()
+    }
+
+    if request.method == 'POST':
+        formulario = SeguroForm(request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request,'Seguro guardado correctamente!') #Nuevo 2
+            
+    return render(request, 'app/seguro/agregarSeguro.html', datos)
+
+def modificarSeguro(request, codigo):
+    seguro = Seguro.objects.get(codigo=codigo)
+    datos = {
+        'form' : SeguroForm(instance=seguro)
+    }
+
+    if request.method == 'POST':
+        formulario = SeguroForm(request.POST, files=request.FILES, instance=seguro)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request,'Seguro guardado correctamente!') #Nuevo 2
+            datos['form'] = formulario
+            
+    return render(request, 'app/seguro/modificarSeguro.html', datos)
+
+def listarSeguro(request):
+    productosAll = Seguro.objects.all()
+    datos = {
+        'listaSeguro' : productosAll
+    }
+    
+    return render(request, 'app/seguro/listarSeguro.html', datos)
+
+def eliminarSeguro(request, codigo):
+    seguro = Seguro.objects.get(codigo=codigo)
+    seguro.delete()
+
+    return redirect(to="listarSeguro")
+#FIN SEGURO
 
 @login_required
 def servicioContratado(request):
