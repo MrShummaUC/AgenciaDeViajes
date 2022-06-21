@@ -43,7 +43,7 @@
                                         <td>{{ aux.precio }}</td>
                                         <td>
                                             <a href="{% url 'modificarSeguro' aux.codigo %}" class="btn btn-info">Modificar</a>
-                                            <a onclick="eliminar({{ aux.codigo }})" class="btn btn-danger">Eliminar</a>
+                                            <a href="{% url 'eliminarSeguro' aux.codigo %}" class="btn btn-danger">Eliminar</a>
                                         </td>
                                     </tr>
                                     {% endfor %}

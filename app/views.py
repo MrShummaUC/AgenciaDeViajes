@@ -101,7 +101,7 @@ def eliminarSeguro(request, codigo):
     seguro = Seguro.objects.get(codigo=codigo)
     seguro.delete()
 
-    return redirect(to="listarSeguro")
+    return redirect(to="listaSeguro")
 #FIN SEGURO
 
 @login_required

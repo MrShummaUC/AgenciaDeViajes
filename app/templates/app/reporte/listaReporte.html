@@ -55,7 +55,7 @@
                                     <td>{{ aux.update_at }}</td>
                                     <td class="d-grid">
                                         <a class="btn btn-info" href="{% url 'modificarReporte'  aux.codigo %}">Modificar</a>
-                                        <a onclick="eliminar({{ aux.codigo }})" class="btn btn-danger mt-2">Eliminar</a> <!--Aun está en PROCESO-->
+                                        <a href="{% url 'eliminaReporte' aux.codigo %}" class="btn btn-danger">Eliminar</a>
                                     </td>
                                 </tr>
                                 {% endfor %}
