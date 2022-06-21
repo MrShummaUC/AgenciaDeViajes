@@ -1,0 +1,51 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+
+{% block navbar %}
+    <div class="nav-opciones mb-3">
+        <ul class="nav flex-row justify-content-between color-enlaces">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'reporte' %}">Reporte Curso</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'monto' %}">Monto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'crearReporte' %}">Crear Reporte</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'listaReporte' %}">Listar Reporte</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block contenido %}
+    <div class="col-lg-12 mt-3 mb-3">
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+                <div class="card bg-dark text-light border border-4 rounded-3">
+                    <div class="card-body">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <div class="card bg-dark text-light" style="border: none;">
+                                <h2>Crear Reporte</h2>
+                                <hr>
+                                </div>
+                            {% csrf_token %}
+                            <table>
+                                {{ form | crispy }}
+                            </table>
+                            <div class="d-flex justify-content-end">
+                                <input type="reset" value="Cancelar" class="btn btn-danger">
+                                &nbsp;
+                                <input type="submit" value="Guardar" class="btn btn-success">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock  %}

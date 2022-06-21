@@ -55,7 +55,7 @@
                                         <hr class="w-100">
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'monto' %}">Generar Reporte</a>
+                                        <a class="nav-link" href="{% url 'reporte' %}">Reporte Curso</a>
                                         <hr class="w-100">
                                     </li>
                                     <li class="nav-item">
@@ -88,10 +88,10 @@
                                 <a class="nav-link" href="#">Registro Viaje</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" target="_blank" href="#">Generar Reporte</a>
+                                    <a class="nav-link" href="{% url 'cliente' %}">Clientes</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'cliente' %}">Clientes</a>
+                                    <a class="nav-link" href="{% url 'reporte' %}">Generar Reporte</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'contrato' %}">Consultar Contrato</a>
@@ -105,8 +105,7 @@
                             </ul>
                         </div>
                         {% endblock %}
-                            
-                        
+                                  
                         {% block contenido %}
         
                         {% endblock %}

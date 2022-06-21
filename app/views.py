@@ -116,10 +116,64 @@ def serviciosAdicionales(request):
 def registroViaje(request):
     return render(request, 'app/varios/registroViaje.html')
 
+# CRUD REPORTE DE CURSO
+@login_required
+def reporte(request):
+    reporteAll = ReporteCurso.objects.all()
+    datos = {
+        'listaReporte': reporteAll
+    }
+    return render(request, 'app/reporte/reporte.html', datos)
 
+@login_required
+def crearReporte(request):
+    datos = {
+        'form': ReporteCursoForm()
+    }
+    if request.method == 'POST':
+        formulario = ReporteCursoForm(request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+    return render(request, 'app/reporte/crearReporte.html', datos)
 
+@login_required
+def listaReporte(request):
+    reporteAll = ReporteCurso.objects.all()
+    datos = {
+        'listaReporte': reporteAll
+    }
+    
+    return render(request, 'app/reporte/listaReporte.html', datos)
 
+@login_required
+def monto(request):
+    reporteAll = ReporteCurso.objects.all()
+    datos = {
+        'listaReporte': reporteAll
+    }
+    return render(request, 'app/cliente/monto.html', datos)
 
+@login_required
+def modificaReporte(request, codigo):
+    reporteAll = ReporteCurso.objects.get(codigo=codigo)
+    datos = {
+        'form' : ReporteCursoForm(instance=reporteAll)
+    }
+
+    if request.method == 'POST':
+        formulario = ReporteCursoForm(request.POST, files=request.FILES, instance=reporteAll)
+        if formulario.is_valid():
+            formulario.save()
+            datos['form'] = formulario
+            
+    return render(request, 'app/reporte/modificarReporte.html', datos)
+
+@login_required
+def eliminaReporte(request, codigo):
+    reporteAll = ReporteCurso.objects.get(codigo=codigo)
+    reporteAll.delete()
+
+    return redirect(to="listaReporte")
 
 
 # CRUD DE USER

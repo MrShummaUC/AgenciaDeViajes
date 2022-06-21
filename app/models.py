@@ -12,3 +12,15 @@ class Seguro(models.Model):
 
     class Meta:
         db_table = 'db_Seguro'
+
+class ReporteCurso(models.Model):
+    codigo = models.IntegerField(null=False,primary_key=True)
+    curso = models.CharField(max_length=60)
+    monto_solicitado = models.IntegerField()
+    monto_depositado = models.IntegerField()
+    monto_faltaltante = models.IntegerField()
+    created_at = models.DateField(auto_now_add=True)
+    update_at = models.DateField(auto_now=True)
+
+    class Meta:
+        db_table = 'db_reporteCurso'
