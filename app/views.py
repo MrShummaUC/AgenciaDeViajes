@@ -57,6 +57,30 @@ def meta(request):
 def publicaciones(request):
     return render(request, 'app/varios/publicaciones.html')
 
+@login_required
+def servicioContratado(request):
+    return render(request, 'app/servicios/servicioContratado.html')
+
+@login_required
+def serviciosAdicionales(request):
+    return render(request, 'app/servicios/serviciosAdicionales.html')
+
+@login_required
+def registroViaje(request):
+    return render(request, 'app/varios/registroViaje.html')
+
+@login_required
+def agregarContrato(request):
+    return render(request, 'app/contrato/agregarContrato.html')
+
+@login_required
+def listarContrato(request):
+    return render(request, 'app/contrato/listarContrato.html')
+
+@login_required
+def modificarContrato(request):
+    return render(request, 'app/contrato/modificarContrato.html')
+
 # SEGURO
 def seguro(request):
     return render(request, 'app/seguro/seguro.html')
@@ -103,18 +127,6 @@ def eliminarSeguro(request, codigo):
 
     return redirect(to="listaSeguro")
 #FIN SEGURO
-
-@login_required
-def servicioContratado(request):
-    return render(request, 'app/servicios/servicioContratado.html')
-
-@login_required
-def serviciosAdicionales(request):
-    return render(request, 'app/servicios/serviciosAdicionales.html')
-
-@login_required
-def registroViaje(request):
-    return render(request, 'app/varios/registroViaje.html')
 
 # CRUD REPORTE DE CURSO
 @login_required
