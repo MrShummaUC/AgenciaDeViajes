@@ -28,4 +28,7 @@ urlpatterns = [
     path('listaReporte/', listaReporte, name='listaReporte'),
     path('modificarReporte/<codigo>/', modificaReporte, name='modificarReporte'),
     path('eliminaReporte/<codigo>/', eliminaReporte, name='eliminaReporte'),
+    path('agregarContrato', agregarContrato, name='agregarContrato'),
+    path('listarContrato', listarContrato, name='listarContrato'),
+    path('modificarContrato', modificarContrato, name='modificarContrato'),
 ]
