@@ -14,30 +14,29 @@
     </div>
 {% endblock %}
 {% block contenido %}
-<div class="row">
-    <div class="col-lg-6 col-sm-6 col-12">
+    <div class="col-lg-12 mt-3 mb-3">
         <div class="row">
-            <div class="col-lg-8 col-sm-8 col-12">
-                <form action="" method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <table>
-    
-                        {{form | crispy}}
-    
-                    </table>
-                    <input type="submit" class="btn btn-succes" value="Guardar">
-                </form>
-                {{mensaje}}
+            <div class="col-12 col-md-6 offset-md-3">
+                <div class="card bg-dark text-light border border-4 rounded-3">
+                    <div class="card-body">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <div class="card bg-dark text-light" style="border: none;">
+                                <h2>Agregar Viaje</h2>
+                                <hr>
+                            </div>
+                            {% csrf_token %}
+                            <table>
+                                {{ form | crispy }}
+                            </table>
+                            <div class="d-flex justify-content-end">
+                                <input type="reset" value="Cancelar" class="btn btn-danger">
+                                &nbsp;
+                                <input type="submit" value="Guardar" class="btn btn-success">
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-lg-12 col-sm-12 col-12">
-        <br>
-        <div class="d-flex justify-content-end">
-          <button type="button" name="" id="" class="btn btn-danger">Limpiar</button>
-          <button type="button" name="" id="" class="btn btn-success mx-2">Generar Contrato</button>
-        </div>
-    </div>
-</div>
-
 {% endblock %}
