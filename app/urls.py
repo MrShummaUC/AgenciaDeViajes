@@ -18,7 +18,6 @@ urlpatterns = [
     path('publicaciones/', publicaciones, name='publicaciones'),
     path('servicioContratado/', servicioContratado, name='servicioContratado'),
     path('serviciosAdicionales/', serviciosAdicionales, name='serviciosAdicionales'),
-    path('registroViaje/', registroViaje, name='registroViaje'),
     path('seguro/', seguro, name='seguro'),
     path('listarSeguro/', listarSeguro, name='listaSeguro'),
     path('agregarSeguro/', agregarSeguro, name='agregarSeguro'),
@@ -31,4 +30,8 @@ urlpatterns = [
     path('agregarContrato', agregarContrato, name='agregarContrato'),
     path('listarContrato', listarContrato, name='listarContrato'),
     path('modificarContrato', modificarContrato, name='modificarContrato'),
+    path('registroViaje/', registroViaje, name='registroViaje'),
+    path('listarRegistro/', listarRegistros, name='listarRegistro'),
+    path('modificarRegistro/<id>/', modificarRegistro, name='modificarRegistro'),
+    path('eliminarRegistro/<id>/', eliminarRegistro, name='eliminarRegistro'),
 ]

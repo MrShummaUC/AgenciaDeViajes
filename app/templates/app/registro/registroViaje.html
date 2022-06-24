@@ -1,0 +1,43 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+{% block navbar %}
+    <div class="nav-opciones mb-3">
+        <ul class="nav flex-row justify-content-between color-enlaces mx-5">
+            <a class="nav-link mx-5" href="{% url 'listarRegistro' %}">Listar Registros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mx-5" href="{% url 'registroViaje' %}">Agregar Registro</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+{% block contenido %}
+<div class="row">
+    <div class="col-lg-6 col-sm-6 col-12">
+        <div class="row">
+            <div class="col-lg-8 col-sm-8 col-12">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <table>
+    
+                        {{form | crispy}}
+    
+                    </table>
+                    <input type="submit" class="btn btn-succes" value="Guardar">
+                </form>
+                {{mensaje}}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-sm-12 col-12">
+        <br>
+        <div class="d-flex justify-content-end">
+          <button type="button" name="" id="" class="btn btn-danger">Limpiar</button>
+          <button type="button" name="" id="" class="btn btn-success mx-2">Generar Contrato</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

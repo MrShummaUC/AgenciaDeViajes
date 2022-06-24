@@ -22,3 +22,13 @@ class ReporteCursoForm(forms.ModelForm):
     class Meta:
         model = ReporteCurso
         fields = '__all__'
+
+class ReporteCursoForm(forms.ModelForm):
+    class Meta:
+        model = ReporteCurso
+        fields = '__all__'
+
+class RegistroViajeForm(ModelForm):
+    class Meta:
+        model = RegistroViaje
+        fields = ['id','clienteCorreo','destinoCorreo','nAlumnos','tipo','fechaViaje','tipoActividad','datoRelevante']

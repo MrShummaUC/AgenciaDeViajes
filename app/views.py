@@ -66,10 +66,6 @@ def serviciosAdicionales(request):
     return render(request, 'app/servicios/serviciosAdicionales.html')
 
 @login_required
-def registroViaje(request):
-    return render(request, 'app/varios/registroViaje.html')
-
-@login_required
 def agregarContrato(request):
     return render(request, 'app/contrato/agregarContrato.html')
 
@@ -80,6 +76,43 @@ def listarContrato(request):
 @login_required
 def modificarContrato(request):
     return render(request, 'app/contrato/modificarContrato.html')
+
+# crud registro viaje
+@login_required
+def registroViaje(request):
+    datos = {
+        'form': RegistroViajeForm()
+        }
+    if request.method == 'POST':
+        formulario = RegistroViajeForm(request.POST,files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            datos['mensaje'] = "Registro agendado  correctamente!"
+    return render (request,'app/registro/registroViaje.html',datos)
+@login_required
+def listarRegistros(request):
+    registroViajeALL = RegistroViaje.objects.all()
+    datos = {
+        'listarRegistro' : registroViajeALL
+    }
+    return render (request,'app/registro/listarRegistro.html',datos)
+def modificarRegistro (request, id):
+    registroViaje = RegistroViaje.objects.get(id = id)
+    datos = {
+        'form' : RegistroViajeForm (instance = registroViaje)
+     }
+    if request.method == 'POST':
+        formulario = RegistroViajeForm(data=request.POST, files = request.FILES, instance=registroViaje)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request,'Registro modificado perfectamente!')
+            datos['form'] = formulario 
+    return render (request,'app/registro/modificarRegistro.html',datos)
+
+def eliminarRegistro(request, id):
+    registroViaje = RegistroViaje.objects.get(id=id)
+    registroViaje.delete()
+    return redirect(to="listarRegistro")
 
 # SEGURO
 def seguro(request):

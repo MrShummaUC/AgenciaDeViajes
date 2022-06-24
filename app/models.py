@@ -24,3 +24,25 @@ class ReporteCurso(models.Model):
 
     class Meta:
         db_table = 'db_reporteCurso'
+
+class TipoServicio (models.Model):
+    tipo = models.CharField(max_length=25)
+    def __str__(self):
+        return self.tipo
+    class Meta:
+        db_table = 'db_tipo_producto'    
+
+
+class RegistroViaje (models.Model):
+    id = models.IntegerField(null=False,primary_key=True)
+    clienteCorreo = models.CharField(max_length=30)
+    destinoCorreo = models.CharField(max_length=30)
+    fechaViaje = models.CharField(max_length=30)
+    nAlumnos = models.IntegerField()
+    tipo = models.ForeignKey(TipoServicio, on_delete = models.CASCADE)
+    tipoActividad = models.CharField(max_length= 30)
+    datoRelevante =  models.CharField(max_length= 30)
+    def __str__(self):
+        return self.clienteCorreo
+    class Meta:
+        db_table = 'db_registro_viaje'
