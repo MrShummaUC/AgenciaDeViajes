@@ -237,7 +237,7 @@ def eliminaContrato(request, codigo):
     contratoAll = ContratoCurso.objects.get(codigo=codigo)
     contratoAll.delete()
 
-    return redirect(to="listaContrato")    
+    return redirect(to="listarContrato")    
 
 # CRUD DE USER
 def registro(request):
