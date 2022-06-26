@@ -6,13 +6,7 @@
     <div class="nav-opciones mb-3">
         <ul class="nav flex-row justify-content-between color-enlaces">
             <li class="nav-item">
-                <a class="nav-link mx-5" href="#">Agregar Contrato</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link mx-5" href="{% url 'contratoCliente' %}">Contrato del Cliente</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link mx-5" href="{% url 'contratoSeguro' %}">Contrato del Seguro</a>
+                <a class="nav-link mx-5" href="{% url 'agregaContrato' %}">Agregar Contrato</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link mx-5" href="{% url 'listarContrato' %}">Lista</a>
@@ -26,9 +20,7 @@
 {% block contenido %}
     <div class="col-12 col-md-6 offset-md-3">
         <div class="card bg-dark text-light border border-4 rounded-3">
-            <div class="card-body">
-               
-                        
+            <div class="card-body">      
                 <form action="" method="POST" enctype="multipart/form-data">
                     <div class="card bg-dark text-light" style="border: none;">
                         <h2>Modificar Contrato</h2>
@@ -43,22 +35,7 @@
                         &nbsp;
                         <input type="submit" value="Guardar" class="btn btn-success">
                     </div>
-                </form>
-
-           
-                {% if messages %}
-                    {% for msj in messages %}
-                        <script>
-                            Swal.fire({
-                                title: 'Guardado!',
-                                text: '{{ msj }}',
-                                icon: 'success',
-                                showConfirmButton: false,
-                                timer: 2000
-                            });
-                        </script>
-                    {% endfor %}
-                {% endif %}
+                </form> 
             </div>
         </div>
     </div>

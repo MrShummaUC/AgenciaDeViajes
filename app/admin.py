@@ -15,3 +15,11 @@ class RegistroViajeAdmin(admin.ModelAdmin):
     
 admin.site.register(TipoServicio)
 admin.site.register(RegistroViaje,RegistroViajeAdmin)
+
+class ContratoCursoAdmin(admin.ModelAdmin):
+    list_dislay = ['codigo','nombre','descripcion','fecha','seguro1','seguro2','seguro3']
+    search_Fields = ['codigo']
+    list_per_page = 4
+
+admin.site.register(ContratoCurso,ContratoCursoAdmin)
+

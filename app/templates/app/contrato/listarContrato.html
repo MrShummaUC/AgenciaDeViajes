@@ -5,13 +5,7 @@
     <div class="nav-opciones mb-3">
         <ul class="nav flex-row justify-content-between color-enlaces">
             <li class="nav-item">
-                <a class="nav-link mx-5" href="#">Agregar Contrato</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link mx-5" href="{% url 'contratoCliente' %}">Contrato del Cliente</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link mx-5" href="{% url 'contratoSeguro' %}">Contrato del Seguro</a>
+                <a class="nav-link mx-5" href="{% url 'agregaContrato' %}">Agregar Contrato</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link mx-5" href="{% url 'listarContrato' %}">Lista</a>
@@ -34,7 +28,7 @@
                             <table class="table table-condensed table-hover table-striped table-responsive-sm bg-light border text-center">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>CODIGO</th>
                                         <th>NOMBRE</th>
                                         <th>DESCRIPCIÓN</th>
                                         <th>FECHA</th>
@@ -46,17 +40,16 @@
                                 <tbody>
                                     {% for aux in listaContrato %}    
                                     <tr>
-                                        <td scope="row">{{ aux.ID }}</td>
+                                        <td scope="row">{{ aux.codigo }}</td>
                                         <td>{{ aux.nombre }}</td>
                                         <td>{{ aux.descripcion }}</td>
                                         <td>{{ aux.fecha }}</td>
                                         <td>{{ aux.seguro1 }}</td>
                                         <td>{{ aux.seguro2 }}</td>
                                         <td>{{ aux.seguro3 }}</td>
-                                        
-                                        <td>
-                                            <a href="{% url 'modificarContrato' aux.id %}" class="btn btn-info">Modificar</a>
-                                            <a href="{% url 'eliminarContrato' aux.id %}" class="btn btn-danger">Eliminar</a>
+                                        <td class="d-grid">
+                                            <a class="btn btn-info" href="{% url 'modificarContrato'  aux.codigo %}">Modificar</a>
+                                            <a href="{% url 'eliminaContrato' aux.codigo %}" class="btn btn-danger">Eliminar</a>
                                         </td>
                                     </tr>
                                     {% endfor %}

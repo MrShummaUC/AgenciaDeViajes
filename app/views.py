@@ -18,10 +18,6 @@ def cliente(request):
     return render(request, 'app/cliente/cliente.html')
 
 @login_required
-def contrato(request):
-    return render(request, 'app/contrato/contrato.html')
-
-@login_required
 def deposito(request):
     return render(request, 'app/posible_eliminacion/deposito.html')
 
@@ -66,8 +62,8 @@ def serviciosAdicionales(request):
     return render(request, 'app/servicios/serviciosAdicionales.html')
 
 @login_required
-def agregarContrato(request):
-    return render(request, 'app/contrato/agregarContrato.html')
+def agregaContrato(request):
+    return render(request, 'app/contrato/agregaContrato.html')
 
 @login_required
 def listarContrato(request):
@@ -219,6 +215,77 @@ def eliminaReporte(request, codigo):
     reporteAll.delete()
 
     return redirect(to="listaReporte")
+
+# CRUD CONTRATO DE CURSO
+
+@login_required
+def crearReporte(request):
+    datos = {
+        'form': ReporteCursoForm()
+    }
+    if request.method == 'POST':
+        formulario = ReporteCursoForm(request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+    return render(request, 'app/reporte/crearReporte.html', datos)
+
+
+
+
+
+@login_required
+def contrato(request):
+    contratoAll = ContratoCurso.objects.all()
+    datos = {
+        'listaContrato': contratoAll
+    }
+    return render(request, 'app/contrato/contrato.html', datos)
+
+@login_required
+def agregaContrato(request):
+    datos = {
+        'form': ContratoCursoForm()
+    }
+    if request.method == 'POST':
+        formulario = ContratoCursoForm(request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+    return render(request, 'app/contrato/agregaContrato.html', datos)
+
+@login_required
+def listaContrato(request):
+    contratoAll = ContratoCurso.objects.all()
+    datos = {
+        'listaContrato': contratoAll
+    }
+    
+    return render(request, 'app/contrato/listaContrato.html', datos)
+
+@login_required
+def modificaContrato(request, codigo):
+    contratoAll = ContratoCurso.objects.get(codigo=codigo)
+    datos = {
+        'form' : ContratoCursoForm(instance=contratoAll)
+    }
+
+    if request.method == 'POST':
+        formulario = ContratoCursoForm(request.POST, files=request.FILES, instance=contratoAll)
+        if formulario.is_valid():
+            formulario.save()
+            datos['form'] = formulario
+            
+    return render(request, 'app/contrato/modificarContrato.html', datos)
+
+@login_required
+def eliminaContrato(request, codigo):
+    contratoAll = ContratoCurso.objects.get(codigo=codigo)
+    contratoAll.delete()
+
+    return redirect(to="listaContrato")    
+
+
+
+
 
 
 # CRUD DE USER

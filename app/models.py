@@ -46,3 +46,18 @@ class RegistroViaje (models.Model):
         return self.clienteCorreo
     class Meta:
         db_table = 'db_registro_viaje'
+
+class ContratoCurso(models.Model):
+    codigo = models.IntegerField(null=False,primary_key=True)
+    nombre = models.CharField(max_length=60)
+    descripcion = models.CharField(max_length=200)
+    fecha = models.CharField(max_length=10)
+    seguro1 = models.CharField(max_length=50)
+    seguro2 = models.CharField(max_length=50)
+    seguro3 = models.CharField(max_length=50)
+    created_at = models.DateField(auto_now_add=True)
+    update_at = models.DateField(auto_now=True)
+
+    class Meta:
+        db_table = 'db_contratoCurso'
+                

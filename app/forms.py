@@ -32,3 +32,8 @@ class RegistroViajeForm(ModelForm):
     class Meta:
         model = RegistroViaje
         fields = ['id','clienteCorreo','destinoCorreo','nAlumnos','tipo','fechaViaje','tipoActividad','datoRelevante']
+
+class ContratoCursoForm(forms.ModelForm):
+    class Meta:
+        model = ContratoCurso
+        fields = '__all__'                
