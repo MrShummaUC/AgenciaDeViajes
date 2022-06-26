@@ -18,10 +18,6 @@ def cliente(request):
     return render(request, 'app/cliente/cliente.html')
 
 @login_required
-def deposito(request):
-    return render(request, 'app/posible_eliminacion/deposito.html')
-
-@login_required
 def estado(request):
     return render(request, 'app/cliente/estado.html')
 
@@ -32,18 +28,6 @@ def monto(request):
 @login_required
 def perfil(request):
     return render(request, 'app/varios/perfil.html')
-
-@login_required
-def reporte(request):
-    return render(request, 'app/varios/reporte.html')
-
-@login_required
-def contratoCliente(request):
-    return render(request, 'app/contrato/contratoCliente.html')
-
-@login_required
-def contratoSeguro(request):
-    return render(request, 'app/contrato/contratoSeguro.html')
 
 @login_required
 def meta(request):
@@ -60,18 +44,6 @@ def servicioContratado(request):
 @login_required
 def serviciosAdicionales(request):
     return render(request, 'app/servicios/serviciosAdicionales.html')
-
-@login_required
-def agregaContrato(request):
-    return render(request, 'app/contrato/agregaContrato.html')
-
-@login_required
-def listarContrato(request):
-    return render(request, 'app/contrato/listarContrato.html')
-
-@login_required
-def modificarContrato(request):
-    return render(request, 'app/contrato/modificarContrato.html')
 
 # crud registro viaje
 @login_required
@@ -217,22 +189,6 @@ def eliminaReporte(request, codigo):
     return redirect(to="listaReporte")
 
 # CRUD CONTRATO DE CURSO
-
-@login_required
-def crearReporte(request):
-    datos = {
-        'form': ReporteCursoForm()
-    }
-    if request.method == 'POST':
-        formulario = ReporteCursoForm(request.POST, files=request.FILES)
-        if formulario.is_valid():
-            formulario.save()
-    return render(request, 'app/reporte/crearReporte.html', datos)
-
-
-
-
-
 @login_required
 def contrato(request):
     contratoAll = ContratoCurso.objects.all()
@@ -259,7 +215,7 @@ def listaContrato(request):
         'listaContrato': contratoAll
     }
     
-    return render(request, 'app/contrato/listaContrato.html', datos)
+    return render(request, 'app/contrato/listarContrato.html', datos)
 
 @login_required
 def modificaContrato(request, codigo):
@@ -282,11 +238,6 @@ def eliminaContrato(request, codigo):
     contratoAll.delete()
 
     return redirect(to="listaContrato")    
-
-
-
-
-
 
 # CRUD DE USER
 def registro(request):
