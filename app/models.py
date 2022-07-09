@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Seguro(models.Model):
@@ -37,7 +38,7 @@ class RegistroViaje (models.Model):
     id = models.IntegerField(null=False,primary_key=True)
     clienteCorreo = models.CharField(max_length=30)
     destinoCorreo = models.CharField(max_length=30)
-    fechaViaje = models.CharField(max_length=30)
+    fechaViaje = models.DateTimeField(default=timezone.now)
     nAlumnos = models.IntegerField()
     tipo = models.ForeignKey(TipoServicio, on_delete = models.CASCADE)
     tipoActividad = models.CharField(max_length= 30)
@@ -51,7 +52,7 @@ class ContratoCurso(models.Model):
     codigo = models.IntegerField(null=False,primary_key=True)
     nombre = models.CharField(max_length=60)
     descripcion = models.CharField(max_length=200)
-    fecha = models.CharField(max_length=10)
+    fecha = models.DateTimeField(default=timezone.now)
     seguro1 = models.CharField(max_length=50)
     seguro2 = models.CharField(max_length=50)
     seguro3 = models.CharField(max_length=50)
