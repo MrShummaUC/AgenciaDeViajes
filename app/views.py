@@ -64,6 +64,8 @@ def listarRegistros(request):
         'listarRegistro' : registroViajeALL
     }
     return render (request,'app/registro/listarRegistro.html',datos)
+
+@login_required
 def modificarRegistro (request, id):
     registroViaje = RegistroViaje.objects.get(id = id)
     datos = {
@@ -77,15 +79,18 @@ def modificarRegistro (request, id):
             datos['form'] = formulario 
     return render (request,'app/registro/modificarRegistro.html',datos)
 
+@login_required
 def eliminarRegistro(request, id):
     registroViaje = RegistroViaje.objects.get(id=id)
     registroViaje.delete()
     return redirect(to="listarRegistro")
 
 # SEGURO
+@login_required
 def seguro(request):
     return render(request, 'app/seguro/seguro.html')
 
+@login_required
 def agregarSeguro(request):
     datos = {
         'form' : SeguroForm()
@@ -99,6 +104,7 @@ def agregarSeguro(request):
             
     return render(request, 'app/seguro/agregarSeguro.html', datos)
 
+@login_required
 def modificarSeguro(request, codigo):
     seguro = Seguro.objects.get(codigo=codigo)
     datos = {
@@ -114,6 +120,7 @@ def modificarSeguro(request, codigo):
             
     return render(request, 'app/seguro/modificarSeguro.html', datos)
 
+@login_required
 def listarSeguro(request):
     productosAll = Seguro.objects.all()
     datos = {
@@ -122,6 +129,7 @@ def listarSeguro(request):
     
     return render(request, 'app/seguro/listarSeguro.html', datos)
 
+@login_required
 def eliminarSeguro(request, codigo):
     seguro = Seguro.objects.get(codigo=codigo)
     seguro.delete()
@@ -256,7 +264,7 @@ def registro(request):
         datos["form"] = formulario
     return render(request, 'registration/registro.html', datos)
 
-@login_required
+
 def login(request):
     messages.success(request, "Has iniciado correctamente")
     return render(request, 'registration/login.html')

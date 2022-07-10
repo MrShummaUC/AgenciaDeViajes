@@ -1,3 +1,4 @@
+from re import A
 from django import forms
 from django.forms import ModelForm
 from .models import *
@@ -13,7 +14,7 @@ class SeguroForm (forms.ModelForm):
 
 
 class CustomUserCreationForm(UserCreationForm):
-    
+    #password1 = forms.CharField(min_length=12, label='Contraseña', required=True)
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name','email','password1','password2']
